@@ -1,0 +1,7 @@
+style:
+  MaxLineLength:
+    active: true
+    excludes:
+      - '**/test/**'
+  ReturnCount:
+    max: 6

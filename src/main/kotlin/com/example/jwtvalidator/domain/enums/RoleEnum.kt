@@ -6,8 +6,10 @@ enum class RoleEnum {
     External;
 
     companion object {
-        fun from(role: String): RoleEnum {
-            return RoleEnum.valueOf(role)
+        fun from(role: String): RoleEnum? {
+            return entries.firstOrNull {
+                it.name == role
+            }
         }
     }
 }

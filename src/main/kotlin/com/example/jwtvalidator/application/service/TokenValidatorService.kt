@@ -29,13 +29,15 @@ class TokenValidatorService(
 
     private fun isPrime(number: Long): Boolean {
         if (number <= 1) return false
-        if (number == 2L) return true
-        if (number % 2 == 0L) return false
+        if (number == EVEN_PRIME_NUMBER) return true
+        if (number % DIVISOR_STEP == 0L) return false
 
         val limit = sqrt(number.toDouble()).toInt()
-        for (i in 3..limit step 2) {
+
+        for (i in FIRST_ODD_DIVISOR..limit step DIVISOR_STEP) {
             if (number % i == 0L) return false
         }
+
         return true
     }
 
@@ -53,5 +55,9 @@ class TokenValidatorService(
     private companion object {
         const val REQUIRED_CLAIMS_COUNT = 3
         const val MAX_NAME_LENGTH = 256
+
+        const val EVEN_PRIME_NUMBER = 2L
+        const val FIRST_ODD_DIVISOR = 3
+        const val DIVISOR_STEP = 2
     }
 }
