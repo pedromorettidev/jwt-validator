@@ -1,0 +1,135 @@
+{
+  "info": {
+    "_postman_id": "1fe6b41f-f6e7-4e60-89e5-c4c0f7666d16",
+    "name": "Jwt Decoder Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "26698679"
+  },
+  "item": [
+    {
+      "name": "Successful Validation",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/jwt/validate?jwt=eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJTZWVkIjoiNzg0MSIsIk5hbWUiOiJUb25pbmhvIEFyYXVqbyJ9.QY05sIjtrcJnP533kQNk8QXcaleJ1Q01jWY_ZzIZuAg",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "jwt",
+            "validate"
+          ],
+          "query": [
+            {
+              "key": "jwt",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJTZWVkIjoiNzg0MSIsIk5hbWUiOiJUb25pbmhvIEFyYXVqbyJ9.QY05sIjtrcJnP533kQNk8QXcaleJ1Q01jWY_ZzIZuAg"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Malformed Jwt",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/jwt/validate?jwt=eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJTZWVkIjoiNzg0MSIsIk5hbWUiOiJUb25pbmhvIEFyYXVqbyJ9.QY05sIjtrcJnP533kQNk8QXcaleJ1Q01jWY_ZzIZuAg",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "jwt",
+            "validate"
+          ],
+          "query": [
+            {
+              "key": "jwt",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJTZWVkIjoiNzg0MSIsIk5hbWUiOiJUb25pbmhvIEFyYXVqbyJ9.QY05sIjtrcJnP533kQNk8QXcaleJ1Q01jWY_ZzIZuAg"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Invalid Role Jwt",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/jwt/validate?jwt=eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiU3VwZXJBZG1pbiIsIlNlZWQiOiI3ODQxIiwiTmFtZSI6IlRvbmluaG8gQXJhdWpvIn0.invalid-signature",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "jwt",
+            "validate"
+          ],
+          "query": [
+            {
+              "key": "jwt",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiU3VwZXJBZG1pbiIsIlNlZWQiOiI3ODQxIiwiTmFtZSI6IlRvbmluaG8gQXJhdWpvIn0.invalid-signature"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Jwt Without Seed Claim",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/jwt/validate?jwt=eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiU3VwZXJBZG1pbiIsIlNlZWQiOiI3ODQxIiwiTmFtZSI6IlRvbmluaG8gQXJhdWpvIn0.invalid-signature",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "jwt",
+            "validate"
+          ],
+          "query": [
+            {
+              "key": "jwt",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiU3VwZXJBZG1pbiIsIlNlZWQiOiI3ODQxIiwiTmFtZSI6IlRvbmluaG8gQXJhdWpvIn0.invalid-signature"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "More Than 3 Claims Jwt",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/jwt/validate?jwt=eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiTWVtYmVyIiwiT3JnIjoiQlIiLCJTZWVkIjoiMTQ2MjciLCJOYW1lIjoiVmFsZGlyIEFyYW5oYSJ9.cmrXV_Flm5mfdpfNUVopY_I2zeJUy4EZ4i3Fea98zvY",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "jwt",
+            "validate"
+          ],
+          "query": [
+            {
+              "key": "jwt",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiTWVtYmVyIiwiT3JnIjoiQlIiLCJTZWVkIjoiMTQ2MjciLCJOYW1lIjoiVmFsZGlyIEFyYW5oYSJ9.cmrXV_Flm5mfdpfNUVopY_I2zeJUy4EZ4i3Fea98zvY"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
