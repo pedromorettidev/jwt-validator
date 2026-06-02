@@ -5,3 +5,11 @@ variable "aws_region" {
 variable "ecr_repository_name" {
   default = "jwt-validator"
 }
+
+variable "subnets" {
+  type = list(string)
+}
+
+variable "security_groups" {
+  type = list(string)
+}
